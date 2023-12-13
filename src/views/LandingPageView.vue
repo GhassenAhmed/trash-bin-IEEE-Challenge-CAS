@@ -4,7 +4,7 @@
         <!--Content before waves-->
         <div class="inner-header flex">
             <div class="text mb-15 mt-5">
-                <div class="child animate__animated animate__jackInTheBox"><span class="" style="color: #EBEF95 !important;font-size: 45px !important;">Success</span>{{ text }} <br> <span style="font-size: 25px;color: #EFB495;">"Albert Einstein"</span></div> 
+                <div class="child animate__animated animate__jackInTheBox"><span class="" style="color: #EBEF95 !important;font-size: 45px !important;">Success</span>{{ text }} <br> <span style="font-size: 25px;color: #EFB495;">"Albert Einstein"</span> <br> <router-link to="/dashboard"><v-btn outlined class="mt-4" color="#F3F8FF">Go To Dashboard</v-btn></router-link></div> 
             </div>
         </div>
 
@@ -85,7 +85,7 @@
                 </v-row>
             </v-container>
 
-            <h1 class="title1 text-center mb-5">solution</h1>
+            <h1 class="title1 text-center">solution</h1>
             <div class="text mb-15" style="margin-bottom: 200px;">
                 <div class="child2 title3">Our project is a smart bin that allows us to produce electricity, biogas and natural fertilizers.</div> 
             </div>
@@ -130,24 +130,45 @@
                 </v-row>
             </div>
 
-            <div class="benefits mt-10">
+            <div class="benefits mt-8">
                 <h1 class="title1 text-center mb-5 mt-10">benefits</h1>
 
-                <v-row>
-                    <v-col>
-                        <div class="card-img">
-                            <img src="../../public/assets/electricite.png" alt="Avatar" class="image">
+                <v-container>
+                    <div class="elements  align-center mb-10">
+                    <v-row class="mt-8 d-flex justify-lg-space-around wrap">
+                    <v-col d-flex justify-center class="v-col-12 v-col-sm-6 v-col-md-6 v-col-xl-4 v-col-lg-4 " >
+                        <div class="card-img" style="width: 100%;">
+                            <v-img 
+                            src="../../public/assets/biogas.png" alt="Avatar" class="image mt-md-4 mt-sm-4"
+                           
+                            >
+                            </v-img>
                             <div class="overlay">
-                                <div class="text">Hello World</div>
+                                <div class="text1">Biogas</div>
                             </div>
                         </div>
                     </v-col>
-                    <v-col></v-col>
-                    <v-col></v-col>
-                </v-row>
-
-
-
+                    <v-col d-flex justify-center class="v-col-12 v-col-sm-6 v-col-md-6 v-col-xl-4 v-col-lg-4 mt-md-4 mt-sm-4" >
+                        <div class="card-img" style="width: 100%;">
+                            <v-img src="../../public/assets/electricite.png" 
+                             alt="Avatar" class="image mt-md-4 mt-sm-4"></v-img>
+                            <div class="overlay">
+                                <div class="text1">Electricity</div>
+                            </div>
+                        </div>
+                    </v-col>
+                    <v-col d-flex justify-center class="v-col-12 v-col-sm-6 v-col-md-6 v-col-xl-4 v-col-lg-4 mt-md-4 mt-sm-4" >
+                        <div class="card-img" style="width: 100%;">
+                            <v-img src="../../public/assets/plante.png"
+                             alt="Avatar" class="image mt-md-4 mt-sm-4"></v-img>
+                            <div class="overlay">
+                                <div class="text1">fertilizers</div>
+                            </div>
+                        </div>
+                    </v-col>
+                    </v-row>
+                </div> 
+                </v-container>
                
             </div>
         </div>
@@ -355,34 +376,41 @@ export default {
 .card-img {
   position: relative;
   width: 50%;
+  border-radius: 15px;
 }
 
 .image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 200px;
+  border-radius: 15px;
 }
 
 .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 20px;
+  right: 20px;
   height: 100%;
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #008CBA;
+  background-color: #F1EAFF;
+  border-radius: 40px;
+
 }
 
 .card-img:hover .overlay {
-  opacity: 1;
+  opacity: 1.5;
 }
 
-.text {
-  color: white;
-  font-size: 20px;
+.text1 {
+  color: #363062;   
+  font-size: 30px;
+ text-transform: uppercase;
+ letter-spacing: 1.5px;
+ font-family: comic sans;
   position: absolute;
   top: 50%;
   left: 50%;
