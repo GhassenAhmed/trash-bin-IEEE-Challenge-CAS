@@ -1,46 +1,136 @@
 <template>
-        <v-container fluid class="container">
-            <div class="header">
-                <v-row class="justify-center pa-6">
-                <v-col>
+    <main>
+        <div class="header">
+        <!--Content before waves-->
+        <div class="inner-header flex">
+            <div class="text mb-15 mt-5">
+                <div class="child animate__animated animate__jackInTheBox"><span class="" style="color: #EBEF95 !important;font-size: 45px !important;">Success</span>{{ text }} <br> <span style="font-size: 25px;color: #EFB495;">"Albert Einstein"</span></div> 
+            </div>
+        </div>
+
+        <!--Waves Container-->
+        <div>
+            <svg
+            class="waves"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28"
+            preserveAspectRatio="none"
+            shape-rendering="auto"
+            >
+            <defs>
+                <path
+                id="gentle-wave"
+                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                />
+            </defs>
+            <g class="parallax">
+                <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="0"
+                fill="rgba(255,255,255,0.7"
+                />
+                <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="3"
+                fill="rgba(255,255,255,0.5)"
+                />
+                <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="5"
+                fill="rgba(255,255,255,0.3)"
+                />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+        </div>
+
+        <div class="main">
+            <h1 class="title1 text-center mb-5">CAS Challenge</h1>
+            <h2 class="title2 text-center mb-5">trash bin</h2>
+            <v-container fluid class="container">
+                
+                <v-row class="justify-center mt-4">
+                <v-col class="d-flex justify-center">
                     <v-img
-                    class="align-center float-start animate__animated animate__backInLeft"
-                    width="200"
+                    class=""
+                    width="250"
+                    height="300"
                     src="../../public/assets/logoSB.png"
                     ></v-img>
                     
                 </v-col>
-                <v-col>
+                <v-col class="d-flex justify-center">
                     <v-img
-                    class="tsyp text-center animate__animated animate__backInDown"
-                    width="400"
+                    class="tsyp"
+                    width="450"
+                    height="300"
                     src="../../public/assets/logoTSYP.jpg"
                     ></v-img>
                 </v-col>
-                <v-col>
-                   
+                <v-col class="d-flex justify-center">
+                
                     <v-img
-                    class="align-center pt-16 float-end animate__animated animate__backInRight"
-                    width="200"
+                    class="align-center mt-16"
+                    width="250"
+                    height="200"
                     src="../../public/assets/logoIASpng.png"
                     ></v-img>
                 </v-col>
                 </v-row>
+            </v-container>
 
-                <div class="text mb-15">
-                    <div class="child animate__animated animate__jackInTheBox"><span class="" style="color: #A7D397 !important;font-size: 45px !important;">Success</span>{{ text }}</div> 
-                </div>
-
+            <h1 class="title1 text-center mb-5">solution</h1>
+            <div class="text mb-15" style="margin-bottom: 200px;">
+                <div class="child2 title3">Our project is a smart bin that allows us to produce electricity, biogas and natural fertilizers.</div> 
             </div>
 
-            <div class="solutions mt-15">
-                <h1>Solution</h1>
+            <div class="solution mt-5">
+                <v-row class="mt-5">
+                    <v-col  class="d-flex justify-center">
+
+                        <v-img
+                        class="align-center float-start animate__animated animate__backInLeft"
+                        width="250"
+                        height="300"
+                        src="../../public/assets/sol1.png"
+                        ></v-img>
+
+                    </v-col>
+
+                    <v-col class="d-flex justify-center">
+                        <v-img
+                        class="align-center float-start animate__animated animate__backInLeft"
+                        width="250"
+                        height="300"
+                        src="../../public/assets/sol2.png"
+                        ></v-img>
+                    </v-col>
+                    <v-col class="d-flex justify-center">
+                        <v-img
+                        class="align-center float-start animate__animated animate__backInLeft"
+                        width="250"
+                        height="300"
+                        src="../../public/assets/sol3.png"
+                        ></v-img>
+                    </v-col>
+                    <v-col class="d-flex justify-center">
+                        <v-img
+                        class="align-center float-start animate__animated animate__backInLeft"
+                        width="250"
+                        height="300"
+                        src="../../public/assets/sol4.png"
+                        ></v-img>
+                    </v-col>
+                </v-row>
             </div>
-            
-        </v-container>
-        <!-- <div class="btn">
-                <v-btn size="x-large">Dashboard</v-btn>
-            </div> -->
+        </div>
+    </main>
 </template>
 <script>
 import 'animate.css';
@@ -59,8 +149,50 @@ export default {
   --animate-duration: 2s;
   --animate-delay: 0.9s;
 }
-.container{
-    background-color: #161A30;
+.title1{
+    font-family: comic sans;
+    font-size: 60px;
+    margin-top: 40px;
+    text-transform: uppercase;
+    color: #053B50;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.main{
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.solution{
+    margin-top: 500px;
+}
+.title2{
+    font-family: comic sans;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #176B87;
+    background: #fff;
+    letter-spacing: .1em;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.title3{
+    font-family: comic sans;
+    font-size: 25px;
+    text-transform: capitalize;
+    color: #176B87;
+    background: #fff;
+    letter-spacing: .1em;
+
+}
+.child2{
+    width: 900px;
+    height: auto;
+    color: #176B87;
+    font-weight: bold;
+    margin: 0px 20px 0px 20px;
+}
+.container{ 
+    margin-top: 90px;
     height: 100%;
 }
 .btn{
@@ -73,7 +205,7 @@ export default {
   text-align: center;
 }
 .text {
-  font-family: comic;
+  font-family: comic sans;
   font-size: 40px;
   margin: 25px;
   width: 100%;
@@ -91,4 +223,107 @@ export default {
   font-weight: bold;
 }
 
+/**************************************** *************************************************/
+
+.header {
+  position: relative;
+  text-align: center;
+  background: linear-gradient(
+    60deg,
+    #053B50 0%,
+    #64CCC5 100%
+  );
+  color: white;
+}
+.logo {
+  width: 50px;
+  fill: white;
+  padding-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.inner-header {
+  height: 65vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/* /* Shrinking for mobile */
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .content {
+    height: 30vh;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
 </style>
