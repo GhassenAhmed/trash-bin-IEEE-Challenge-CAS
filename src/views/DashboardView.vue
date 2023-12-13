@@ -6,6 +6,7 @@
         rail
         style="height: 100%;"
       >
+      
         <v-list>
           <v-list-item
             prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"

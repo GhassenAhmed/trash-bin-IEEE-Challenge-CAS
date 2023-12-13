@@ -16,3 +16,9 @@ export default {
   }),
 }
 </script>
+<style>
+body{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+</style>
