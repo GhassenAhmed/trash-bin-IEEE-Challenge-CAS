@@ -91,7 +91,7 @@
             </div>
 
             <div class="solution mt-5">
-                <v-row class="mt-5">
+                <v-row class="mt-10">
                     <v-col  class="d-flex justify-center">
 
                         <v-img
@@ -129,6 +129,27 @@
                     </v-col>
                 </v-row>
             </div>
+
+            <div class="benefits mt-10">
+                <h1 class="title1 text-center mb-5 mt-10">benefits</h1>
+
+                <v-row>
+                    <v-col>
+                        <div class="card-img">
+                            <img src="../../public/assets/electricite.png" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="text">Hello World</div>
+                            </div>
+                        </div>
+                    </v-col>
+                    <v-col></v-col>
+                    <v-col></v-col>
+                </v-row>
+
+
+
+               
+            </div>
         </div>
     </main>
 </template>
@@ -157,7 +178,9 @@ export default {
     color: #053B50;
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 }
-
+.mt-10 {
+    margin-top: 167px !important;
+}
 .main{
     overflow: hidden;
     box-sizing: border-box;
@@ -325,5 +348,47 @@ export default {
   h1 {
     font-size: 24px;
   }
+}
+
+/*************************************image hover effect****************/
+
+.card-img {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.card-img:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 </style>
