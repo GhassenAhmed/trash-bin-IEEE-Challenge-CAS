@@ -25,7 +25,7 @@
                     {icon:"mdi-trash-can",to:"/dashboard",title:"Trash"},
                     {icon:"mdi-gas-cylinder",to:"/biogas",title:"Biogas"},
                     {icon:"mdi-flash",to:"/electricity",title:"Electricity"},
-                    {icon:"mdi-gas-cylinder",to:"/methane",title:"Methane(CH4)"}    
+                    {icon:"mdi-flower-tulip",to:"/fertilizers",title:"Fertilizers"}  
                 ]
             }
         },
