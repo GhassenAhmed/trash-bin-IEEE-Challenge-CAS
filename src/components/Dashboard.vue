@@ -3,7 +3,7 @@
         <v-list-item
           v-for="link in links"
           :key="link.title"
-          class="mb-3 mt-5"
+          class="mb-3 mt-5 pa-4"
         >
         <v-btn variant="text"  :to="link.to">
             <v-list-item-icon>
@@ -24,7 +24,8 @@
                 links:[
                     {icon:"mdi-trash-can",to:"/dashboard",title:"Trash"},
                     {icon:"mdi-gas-cylinder",to:"/biogas",title:"Biogas"},
-                    {icon:"mdi-flash",to:"/electricity",title:"Electricity"}    
+                    {icon:"mdi-flash",to:"/electricity",title:"Electricity"},
+                    {icon:"mdi-gas-cylinder",to:"/methane",title:"Methane(CH4)"}    
                 ]
             }
         },
