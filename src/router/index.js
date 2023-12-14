@@ -3,6 +3,7 @@ import DashboardView from "@/views/DashboardView"
 import LandingPageView from "@/views/LandingPageView"
 import BiogasView from "@/views/BiogasView"
 import ElectricityView from "@/views/ElectricityView"
+import MethaneView from "@/views/MethaneView"
 const routes = [
   {
     path: '/',
@@ -25,6 +26,11 @@ const routes = [
     path: '/electricity',
     name: 'electricity',
     component: ElectricityView
+  },
+  {
+    path: '/methane',
+    name: 'methane',
+    component: MethaneView
   },
   
 ]
