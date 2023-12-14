@@ -2,119 +2,98 @@
   <div class="root">
      <Navbar></Navbar>
      <div class="mt-5 py-5 px-5 mb-15">
-      <v-layout class="mt-15 mb-15" row >
-        
-        trash
-      </v-layout>
       
+      <div class="container " style="width: 100%">
+        <v-row style="width: 100%;" class="d-flex justify-center align-center">
+          <v-col> <v-chart class="v-col-12" :option="option" style="width:100% ;height: 700px" /></v-col>
+        </v-row>
+       
+      </div>
             
   </div>
   </div>
 </template>
 <script>
-import Navbar from '@/components/Navbar.vue'
-import { use } from "echarts/core";
-import { CanvasRenderer } from "echarts/renderers";
-import { PieChart } from "echarts/charts";
+import Navbar from '@/components/Navbar.vue';
+import VChart from 'vue-echarts'; 
+
+import { use } from 'echarts/core';
+import { PieChart } from 'echarts/charts';
 import {
-TitleComponent,
-TooltipComponent,
-LegendComponent
-} from "echarts/components";
-import VChart, { THEME_KEY } from "vue-echarts";
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent
+} from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
 
 use([
-CanvasRenderer,
-PieChart,
-TitleComponent,
-TooltipComponent,
-LegendComponent
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+  PieChart,
+  CanvasRenderer
 ]);
-  export default {
-  provide: {
-      [THEME_KEY]: "dark"
+
+export default {
+  components: {
+    Navbar,
+    VChart // Corrected import
   },
-    components:{
-      Navbar,VChart
-   },
-  name:'DashboardView',
-data(){
-  return{
+  name: 'DashboardView',
+  data() {
+    return {
       drawer: false,
       mini: true,
-   option : {
-       title: {
-       text: ` Client `,
-       left: 'center',
-    },
-    tooltip: {
-      trigger: 'item',
-      formatter: '{a} <br/>{b} : {c} ({d}%)',
-    },
-    legend: {
-      orient: 'vertical',
-      left: 'left',
-      data: ['Client', 'ServiceProvider'],
-    },
-    series: [
-      {
-        name: 'Static',
-        type: 'pie',
-        radius: '55%',
-        center: ['50%', '60%'],
-        data: [
-          { value:0, name: 'Client' },
-          { value:0, name: 'ServiceProvider' },
-        ],
-        emphasis: {
-          itemStyle: {
-            shadowBlur: 10,
-            shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)',
+      option : {
+         title: {
+         text: ` Trash Level `,
+         left: 'center',
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)',
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['Trash', 'Empty'],
+      },
+      series: [
+        {
+          name: 'Access From',
+          name: 'Static',
+          type: 'pie',
+          radius: '60%',
+          center: ['50%', '40%'],
+          color: ['#FF6347', '#614BC3'],
+          data: [
+            { value:0, name: 'Trash' },
+            { value:0, name: 'Empty' },
+          ],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)',
+            },
           },
         },
+         ],
       },
-       ],
-    },
-
-    option1 : {
-       title: {
-       text: ` Service `,
-       left: 'center',
-    },
-    tooltip: {
-      trigger: 'item',
-      formatter: '{a} <br/>{b} : {c} ({d}%)',
-    },
-    legend: {
-      orient: 'vertical',
-      left: 'left',
-      data: ['Verifier', 'Non verifier'],
-    },
-    series: [
-      {
-        name: 'Static',
-        type: 'pie',
-        radius: '55%',
-        center: ['50%', '60%'],
-        data: [
-          { value:0, name: 'Verifier' },
-          { value:0, name: 'Non verifier' },
-        ],
-        emphasis: {
-          itemStyle: {
-            shadowBlur: 10,
-            shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)',
-          },
-        },
-      },
-       ],
-    },
       }
+    },
+  methods:{
+    randomValue(){
+      return Math.floor(Math.random() * (1000 - 200 + 1)) + 100;
+    }
   },
-}
+  created(){
+    this.option.series[0].data[0].value = this.randomValue();
+    this.option.series[0].data[1].value = this.randomValue();
+  }
+  }
 </script>
+
 <style scoped>
 *{
   font-family:cursive;
