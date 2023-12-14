@@ -46,7 +46,7 @@ export default {
       mini: true,
       option : {
          title: {
-         text: ` Biogas Level `,
+         text: ` Electricity Level `,
          left: 'center',
       },
       tooltip: {
