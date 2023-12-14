@@ -1,61 +1,168 @@
 <template>
-    <v-card  style="height: 100%;">
-    <v-layout  style="height: 100%;">
-      <v-navigation-drawer
-        expand-on-hover
-        style="height: 100%;"
-      >
-     
-        <v-list>
-          <v-list-item
-            prepend-avatar="https://scontent.ftun15-1.fna.fbcdn.net/v/t1.15752-9/371463595_308250398855722_5800845893055358111_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=vgXhNilOcTEAX9IljkD&_nc_ht=scontent.ftun15-1.fna&oh=03_AdT6PWhRS3xbMch3dXG6ZnEDtHZeaktK7UN9i8OMMpwJfg&oe=65A2BF93"
-            title="Ghassen Ahmed"
-            subtitle="ghassenahmed74@gmail"
-          ></v-list-item>
-        </v-list>
-
-        <v-divider></v-divider>
-
-        <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-folder" title="My Files" value="myfiles"></v-list-item>
-          <v-list-item prepend-icon="mdi-account-multiple" title="Shared with me" value="shared"></v-list-item>
-          <v-list-item prepend-icon="mdi-star" title="Starred" value="starred"></v-list-item>
-        </v-list>
-      </v-navigation-drawer>
-
-      <v-main style="height: 250px">
-       dashbord
-      </v-main>
-    </v-layout>
-    </v-card>
+  <div class="root">
+     <Navbar></Navbar>
+     <div class="mt-5 py-5 px-5 mb-15">
+      <v-layout class="mt-15 mb-15" row >
+        
+        trash
+      </v-layout>
+      
+            
+  </div>
+  </div>
 </template>
 <script>
-  import { use } from "echarts/core";
-  import { CanvasRenderer } from "echarts/renderers";
-  import { PieChart } from "echarts/charts";
-  import {
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent
-  } from "echarts/components";
-  import VChart, { THEME_KEY } from "vue-echarts";
+import Navbar from '@/components/Navbar.vue'
+import { use } from "echarts/core";
+import { CanvasRenderer } from "echarts/renderers";
+import { PieChart } from "echarts/charts";
+import {
+TitleComponent,
+TooltipComponent,
+LegendComponent
+} from "echarts/components";
+import VChart, { THEME_KEY } from "vue-echarts";
 
-  use([
-  CanvasRenderer,
-  PieChart,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent
-  ]);
-
+use([
+CanvasRenderer,
+PieChart,
+TitleComponent,
+TooltipComponent,
+LegendComponent
+]);
   export default {
-    provide: {
-        [THEME_KEY]: "dark"
-    },
+  provide: {
+      [THEME_KEY]: "dark"
+  },
     components:{
-        VChart
-     },
-  }
+      Navbar,VChart
+   },
+  name:'DashboardView',
+data(){
+  return{
+      drawer: false,
+      mini: true,
+   option : {
+       title: {
+       text: ` Client `,
+       left: 'center',
+    },
+    tooltip: {
+      trigger: 'item',
+      formatter: '{a} <br/>{b} : {c} ({d}%)',
+    },
+    legend: {
+      orient: 'vertical',
+      left: 'left',
+      data: ['Client', 'ServiceProvider'],
+    },
+    series: [
+      {
+        name: 'Static',
+        type: 'pie',
+        radius: '55%',
+        center: ['50%', '60%'],
+        data: [
+          { value:0, name: 'Client' },
+          { value:0, name: 'ServiceProvider' },
+        ],
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)',
+          },
+        },
+      },
+       ],
+    },
+
+    option1 : {
+       title: {
+       text: ` Service `,
+       left: 'center',
+    },
+    tooltip: {
+      trigger: 'item',
+      formatter: '{a} <br/>{b} : {c} ({d}%)',
+    },
+    legend: {
+      orient: 'vertical',
+      left: 'left',
+      data: ['Verifier', 'Non verifier'],
+    },
+    series: [
+      {
+        name: 'Static',
+        type: 'pie',
+        radius: '55%',
+        center: ['50%', '60%'],
+        data: [
+          { value:0, name: 'Verifier' },
+          { value:0, name: 'Non verifier' },
+        ],
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)',
+          },
+        },
+      },
+       ],
+    },
+      }
+  },
+}
 </script>
 <style scoped>
+*{
+  font-family:cursive;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.content{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr ;
+grid-gap: 25px;
+}
+
+@media screen and (max-width:950px){
+.content{
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-gap: 25px;
+}
+
+}
+
+@media screen and (max-width:530px){
+.content{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 25px;
+  text-align: center;
+}
+}
+.chart {
+  height: 50vh;
+  width: 30vw;
+}
+
+@media screen and (max-width:750px) {
+  .chart {
+    height: 30vh;
+    width: 50vw;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .chart {
+    height: 30vh;
+    width: 70vw;
+  }
+}
+
+
 </style>
